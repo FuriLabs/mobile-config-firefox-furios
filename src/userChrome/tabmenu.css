@@ -114,27 +114,4 @@
         display: none;
     }
 
-    #allTabsMenu-allTabsView vbox.panel-subview-body {
-        /* Use the whole height */
-        height: 300px !important;
-        max-height: 300px !important;
-    }
-
-    #allTabsMenu-allTabsView vbox.panel-subview-body:first-child {
-        /* the allTabsMenu has a vbox.panel-subview-body inside another one.
-         * With -moz-box-flex: initial, it will show a scroll bar in each, but
-         * we only want one scrollbar. */
-        overflow-y: hidden !important;
-    }
-
-    #customizationui-widget-multiview box.panel-viewstack { /* since FF 113 */
-        /* Use the whole height */
-        height: 300px !important;
-        max-height: 300px !important;
-    }
-
-    #allTabsMenu-allTabsView-tabs { /* since FF 106 */
-        /* Make sure tabs with long titles don't exceed the all tabs menu */
-        max-width: calc(100vw - 20px);
-    }
 }

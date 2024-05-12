@@ -14,31 +14,14 @@
         }
     }
 
-    /* Fix panels that are misplaced when the URL bar is at the bottom */
-    panel[side="top"], box.panel-viewstack, #appMenu-popup {
-        height: max-content !important;
-        min-height: max-content !important;
-        max-height: 80vh !important;
-        min-width: 100% !important;
-        width: max-content !important;
+    panel, panelmultiview, panelview {
+        min-width: 100vw !important;
+        width: 100vw !important;
         max-width: 100vw !important;
-        margin-bottom: 4px !important;
-        border-bottom-left-radius: 0 !important;
-        border-radius: 0 !important;
-        padding: 0 !important;
     }
 
-    /* Wonky rule to ensure the GNOME CSS doesn't override this :( */
-    panelmultiview, panelmultiview > *, panelmultiview * panelview,
-    body #identity-popup-mainView, body #permission-popup-mainView,
-    body #protections-popup-mainView, body #identity-popup-mainView-panel-header {
-        flex: 1 !important;
-        flex-shrink: 0 !important;
-        max-width: -moz-available !important;
-        min-width: -moz-available !important;
-        margin: 0 !important;
-        padding: 0 !important;
-        position: relative !important;
+    menupopup {
+        max-width: 100vw !important;
     }
 
     /* Allow extensions to use full popup */
@@ -58,6 +41,8 @@
     #context-sendlinktodevice,
     #context-viewpartialsource-selection,
     #inspect-separator,
+    #appmenu-moreTools-button,
+    #appmenu-moreTools-button + toolbarseparator,
     #overflowMenu-customize-button {
         display: none !important
     }
