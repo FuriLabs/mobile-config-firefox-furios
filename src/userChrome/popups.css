@@ -51,16 +51,6 @@
     display: none !important
 }
 
-/* Fix menu sizes being wrong more often than not */
-#mainPopupSet {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: -1;
-}
-
 menupopup {
     width: max-content !important;
     min-width: max-content !important;
