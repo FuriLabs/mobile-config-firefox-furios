@@ -68,6 +68,13 @@
     }
 }
 
+/* CAREFUL: Do not gate these (or anything that runs inside a popup/panel)
+ * behind a media query!
+ * If you do, there will be a size calculation conflict between the DOM in
+ * the main window and the popup/panel, and the popup/panel will be sized
+ * incorrectly.
+ */
+
 #appMenu-extensions-themes-button,
 #appMenu-print-button2,
 #appMenu-save-file-button2,
@@ -78,13 +85,6 @@
 #appMenu-zoom-controls + toolbarseparator {
     display: none !important;
 }
-
-
-/* CAREFUL: Do not gate these (or anything that runs inside a popup/panel)
- * behind a media query!
- * If you do, there will be a size calculation conflict between the DOM in
- * the main window and the popup/panel, and the popup/panel will be sized
- * incorrectly.
 
 /* Hide some context menu items,
  * hide 'Customize Toolbar' in overflow menu */
