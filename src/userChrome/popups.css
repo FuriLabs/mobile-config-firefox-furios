@@ -13,6 +13,7 @@
             max-width: 98vw;
         }
     }
+
     panel {
         contain: strict !important;
         margin: 0 !important;
@@ -55,6 +56,12 @@
      * tabs" or "Allow open in app" */
     .dialogFrame {
         max-width: 100%;
+    }
+
+    body:has(#urlbar[breakout][breakout-extend],
+    #urlbar[breakout][breakout-extend-disabled][open]) #mainPopupSet panel {
+        visibility: hidden !important;
+        pointer-events: none !important;
     }
 }
 
