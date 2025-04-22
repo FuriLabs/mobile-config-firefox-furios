@@ -33,6 +33,12 @@ install: all
 		"$(DESTDIR)/$(FIREFOX_DIR)/defaults/pref/mobile-config-prefs.js"
 	install -Dm644 src/mobile-config-autoconfig.js \
 		"$(DESTDIR)/$(FIREFOX_DIR)/mobile-config-autoconfig.js"
+	install -Dm644 src/modules/chrome.manifest \
+		"$(DESTDIR)/etc/mobile-config-firefox/chrome.manifest"
+	install -Dm644 src/modules/boot.sys.mjs \
+		"$(DESTDIR)/etc/mobile-config-firefox/boot.sys.mjs"
+	install -Dm644 src/modules/PrefManager.sys.mjs \
+		"$(DESTDIR)/etc/mobile-config-firefox/PrefManager.sys.mjs"
 	install -Dm644 "out/userChrome.files" \
 		-t "$(DESTDIR)/etc/mobile-config-firefox"
 	install -Dm644 "out/userContent.files" \
@@ -53,6 +59,9 @@ uninstall:
 	rm -fv "$(DESTDIR)/$(FIREFOX_CONFIG_DIR)/policies/policies.json"
 	rm -fv "$(DESTDIR)/$(FIREFOX_DIR)/defaults/pref/mobile-config-prefs.js"
 	rm -fv "$(DESTDIR)/$(FIREFOX_DIR)/mobile-config-autoconfig.js"
+	rm -fv "$(DESTDIR)/$(FIREFOX_DIR)/chrome.manifest"
+	rm -fv "$(DESTDIR)/$(FIREFOX_DIR)/boot.sys.mjs"
+	rm -fv "$(DESTDIR)/$(FIREFOX_DIR)/PrefManager.sys.mjs"
 	rm -rfv "$(DESTDIR)/etc/mobile-config-firefox"
 	rm -fv "$(DESTDIR)/usr/share/metainfo/org.postmarketos.mobile_config_firefox.metainfo.xml"
 
