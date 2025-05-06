@@ -13,17 +13,20 @@ const { FileUtils } =
 const { PrefManager } = ChromeUtils.importESModule(
     'chrome://mobileconfigfirefox/content/PrefManager.sys.mjs'
 );
+const { UserAgentManager } = ChromeUtils.importESModule(
+    'chrome://mobileconfigfirefox/content/UserAgentManager.sys.mjs'
+);
+const { FileExtendedUtils } = ChromeUtils.importESModule(
+    'chrome://mobileconfigfirefox/content/utils/FileExtendedUtils.sys.mjs'
+);
 
 /**
  * Set prefereces on startup
  */
-function setPrefs() {
-    PrefManager.defaultPref('mcf.mypref.enabled', false);
-}
-
 (function main() {
     try {
-        setDefaultPrefs();
+        PrefManager.defaultPref('mcf.mypref.enabled', false);
+        const userAgent = new UserAgentManager();
     } catch(e) {
         console.log(e);
     }

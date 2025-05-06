@@ -2,10 +2,10 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
-export const PrefManager = {
-  // TODO:
-  // - Implement detection of UTF8 strings vs. chars
-  pref(prefName, value) {
+// TODO:
+// - Implement detection of UTF8 strings vs. chars
+export class PrefManager {
+  static pref(prefName, value) {
     try {
       var prefBranch = getPrefBranch();
 
@@ -23,8 +23,9 @@ export const PrefManager = {
     } catch (e) {
       console.error(e);
     }
-  },
-  defaultPref(prefName, value) {
+  }
+
+  static defaultPref(prefName, value) {
     try {
       const prefBranch = Services.prefs.getDefaultBranch(null);
       if (typeof value == "string") {
@@ -42,8 +43,9 @@ export const PrefManager = {
     } catch (e) {
       console.error(e);
     }
-  },
-  getPref(prefName) {
+  }
+
+  static getPref(prefName) {
     try {
       var prefBranch = getPrefBranch();
 
