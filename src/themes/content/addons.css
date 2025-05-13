@@ -5,4 +5,7 @@
     :root {
         --section-width: min(664px, 100%) !important;
     }
+    body {
+        background-color: darkblue !important;
+    }
 }

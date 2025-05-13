@@ -16,6 +16,9 @@ const { PrefManager } = ChromeUtils.importESModule(
 const { UserAgentManager } = ChromeUtils.importESModule(
     'chrome://mobileconfigfirefox/content/UserAgentManager.sys.mjs'
 );
+const { StyleSheetManager } = ChromeUtils.importESModule(
+    'chrome://mobileconfigfirefox/content/StyleSheetManager.sys.mjs'
+);
 const { FileExtendedUtils } = ChromeUtils.importESModule(
     'chrome://mobileconfigfirefox/content/utils/FileExtendedUtils.sys.mjs'
 );
@@ -52,6 +55,14 @@ function set_default_preferences() {
     try {
         set_default_preferences();
         const userAgent = new UserAgentManager();
+        // TODO:
+        // - How can we only inject a stylesheet in the content? And only if the
+        //   url matches.
+        //
+        //   See:
+        //   - ExtensionContent.sys.mjs
+        //   - ExtensionUserScriptsContent.sys.mjs
+        const stylesheet = new StyleSheetManager();
     } catch(e) {
         console.log(e);
     }
