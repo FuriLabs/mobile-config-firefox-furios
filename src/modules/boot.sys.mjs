@@ -22,10 +22,35 @@ const { FileExtendedUtils } = ChromeUtils.importESModule(
 
 /**
  * Set prefereces on startup
+ *
+ * See docs/ for preferences description and reason we're modifying them.
+ */
+function set_default_preferences() {
+    PrefManager.defaultPref('apz.allow_zooming', true);
+    PrefManager.defaultPref('apz.allow_double_tap_zooming', true);
+    PrefManager.defaultPref('browser.download.animateNotifications', false);
+    PrefManager.defaultPref('browser.newtabpage.enabled', false);
+    PrefManager.defaultPref('browser.search.suggest.enabled', false);
+    PrefManager.defaultPref('browser.tabs.inTitlebar', 1);
+    PrefManager.defaultPref('browser.urlbar.clickSelectsAll', true);
+    PrefManager.defaultPref('browser.urlbar.suggest.engines', false);
+    PrefManager.defaultPref('browser.urlbar.suggest.topsites', false);
+    PrefManager.defaultPref('browser.urlbar.trimHttps', true);
+    PrefManager.defaultPref('dom.maxtouchpoints.testing.value', 1);
+    PrefManager.defaultPref('dom.w3c.touch_events.enabled', true);
+    PrefManager.defaultPref('dom.w3c_touch_events.legacy_apis.enabled', true);
+    PrefManager.defaultPref('media.webrtc.camera.allow-pipewire', true);
+    PrefManager.defaultPref('toolkit.cosmeticAnimations.enabled', false);
+    PrefManager.defaultPref('toolkit.legacyUserProfileCustomizations.stylesheets', true);
+    PrefManager.defaultPref('widget.use-xdg-desktop-portal.file-picker', 1);
+}
+
+/**
+ * Bootstrapping
  */
 (function main() {
     try {
-        PrefManager.defaultPref('mcf.mypref.enabled', false);
+        set_default_preferences();
         const userAgent = new UserAgentManager();
     } catch(e) {
         console.log(e);
