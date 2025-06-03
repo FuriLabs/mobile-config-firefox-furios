@@ -17,16 +17,25 @@ install:
 		"$(DESTDIR)/etc/mobile-config-firefox/chrome.manifest"
 	install -Dm644 src/modules/boot.sys.mjs \
 		"$(DESTDIR)/etc/mobile-config-firefox/boot.sys.mjs"
+	# PrefManager
 	install -Dm644 src/modules/PrefManager.sys.mjs \
 		"$(DESTDIR)/etc/mobile-config-firefox/PrefManager.sys.mjs"
+	# UserAgentManager
 	install -Dm644 src/modules/UserAgentManager.sys.mjs \
 		"$(DESTDIR)/etc/mobile-config-firefox/UserAgentManager.sys.mjs"
+	# StyleSheetManager
 	install -Dm644 src/modules/StyleSheetManager.sys.mjs \
 		"$(DESTDIR)/etc/mobile-config-firefox/StyleSheetManager.sys.mjs"
 	install -Dm644 src/themes/main.css \
 		"$(DESTDIR)/etc/mobile-config-firefox/themes/main.css"
 	install -Dm644 src/themes/content/addons.css \
 		"$(DESTDIR)/etc/mobile-config-firefox/themes/content/addons.css"
+	# AboutMobile
+	install -Dm644 src/modules/AboutMobile.sys.mjs \
+		"$(DESTDIR)/etc/mobile-config-firefox/AboutMobile.sys.mjs"
+	install -Dm644 src/modules/aboutmobile/index.html \
+		"$(DESTDIR)/etc/mobile-config-firefox/aboutmobile/index.html"
+	# Miscs
 	install -Dm644 org.postmarketos.mobile_config_firefox.metainfo.xml \
 		"$(DESTDIR)/usr/share/metainfo/org.postmarketos.mobile_config_firefox.metainfo.xml"
 

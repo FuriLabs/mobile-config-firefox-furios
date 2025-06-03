@@ -19,6 +19,12 @@ const { UserAgentManager } = ChromeUtils.importESModule(
 const { StyleSheetManager } = ChromeUtils.importESModule(
     'chrome://mobileconfigfirefox/content/StyleSheetManager.sys.mjs'
 );
+//const { AboutUserChrome } = ChromeUtils.importESModule(
+//    'chrome://mobileconfigfirefox/content/AboutMobile.sys.mjs'
+//);
+const { AboutMobile } = ChromeUtils.importESModule(
+    'chrome://mobileconfigfirefox/content/AboutMobile.sys.mjs'
+);
 const { FileExtendedUtils } = ChromeUtils.importESModule(
     'chrome://mobileconfigfirefox/content/utils/FileExtendedUtils.sys.mjs'
 );
@@ -48,6 +54,35 @@ function set_default_preferences() {
     PrefManager.defaultPref('widget.use-xdg-desktop-portal.file-picker', 1);
 }
 
+function register_about_mobile() {
+    // TODO:
+    // - Move ComponentRegistrar and factory to the AboutMobile class
+    // - Refactor AboutMobile.sys.mjs to be a generic about:page creator.
+
+    const Cm = Components.manager.QueryInterface(Ci.nsIComponentRegistrar);
+    const { ComponentUtils } = ChromeUtils.importESModule(
+        "resource://gre/modules/ComponentUtils.sys.mjs"
+    );
+    const factory = ComponentUtils.generateSingletonFactory(function () {
+        return new AboutMobile({
+            chromeUrl: "chrome://mobileconfigfirefox/content/aboutmobile/index.html",
+            aboutHost: "mobile",
+            classID: "{6cb98913-a163-482c-9622-4faedc0e923f}",
+            description: "About Mobile Page",
+            uriFlags:
+              Ci.nsIAboutModule.ALLOW_SCRIPT |
+              Ci.nsIAboutModule.URI_SAFE_FOR_UNTRUSTED_CONTENT |
+              Ci.nsIAboutModule.IS_SECURE_CHROME_UI,
+        });
+    });
+
+    Cm.registerFactory(
+        Components.ID("{6cb98913-a163-482c-9622-4faedc0e923f}"),
+        "about:mobile",
+        "@mozilla.org/network/protocol/about;1?what=mobile",
+        factory
+    );
+}
 /**
  * Bootstrapping
  */
@@ -56,13 +91,13 @@ function set_default_preferences() {
         set_default_preferences();
         const userAgent = new UserAgentManager();
         // TODO:
-        // - How can we only inject a stylesheet in the content? And only if the
-        //   url matches.
-        //
-        //   See:
-        //   - ExtensionContent.sys.mjs
-        //   - ExtensionUserScriptsContent.sys.mjs
+        // - Find out if we can target the chrome and content context
+        //   individually instead of globally injecting all the styling in each
+        //   window.
+        //   See: https://searchfox.org/mozilla-central/source/dom/interfaces/base/nsIDOMWindowUtils.idl#1891-1915
         const stylesheet = new StyleSheetManager();
+        register_about_mobile();
+
     } catch(e) {
         console.log(e);
     }
