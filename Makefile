@@ -26,15 +26,25 @@ install:
 	# StyleSheetManager
 	install -Dm644 src/modules/StyleSheetManager.sys.mjs \
 		"$(DESTDIR)/etc/mobile-config-firefox/StyleSheetManager.sys.mjs"
+	install -dm755 "$(DESTDIR)/etc/mobile-config-firefox/themes/chrome/"
+	install -dm755 "$(DESTDIR)/etc/mobile-config-firefox/themes/content/"
 	install -Dm644 src/themes/main.css \
 		"$(DESTDIR)/etc/mobile-config-firefox/themes/main.css"
-	install -Dm644 src/themes/content/addons.css \
-		"$(DESTDIR)/etc/mobile-config-firefox/themes/content/addons.css"
+	install -Dm644 src/themes/chrome/*.css \
+		"$(DESTDIR)/etc/mobile-config-firefox/themes/chrome/"
+	install -Dm644 src/themes/content/*.css \
+		"$(DESTDIR)/etc/mobile-config-firefox/themes/content/"
 	# AboutMobile
 	install -Dm644 src/modules/AboutMobile.sys.mjs \
 		"$(DESTDIR)/etc/mobile-config-firefox/AboutMobile.sys.mjs"
+	install -Dm644 src/modules/aboutmobile/aboutmobile.js \
+		"$(DESTDIR)/etc/mobile-config-firefox/aboutmobile/aboutmobile.js"
+	install -Dm644 src/modules/aboutmobile/aboutmobile.css \
+		"$(DESTDIR)/etc/mobile-config-firefox/aboutmobile/aboutmobile.css"
 	install -Dm644 src/modules/aboutmobile/index.html \
 		"$(DESTDIR)/etc/mobile-config-firefox/aboutmobile/index.html"
+	install -Dm644 src/modules/aboutmobile/locales/en-US/browser/aboutmobile/aboutmobile.ftl \
+		"$(DESTDIR)/etc/mobile-config-firefox/aboutmobile/locales/en-US/browser/aboutmobile/aboutmobile.ftl"
 	# Miscs
 	install -Dm644 org.postmarketos.mobile_config_firefox.metainfo.xml \
 		"$(DESTDIR)/usr/share/metainfo/org.postmarketos.mobile_config_firefox.metainfo.xml"

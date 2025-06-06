@@ -5,6 +5,10 @@
 /**
  * About Mobile
  * Adapted from toolkit/components/normandy/content/AboutPages.sys.mjs
+ *
+ * TODO:
+ * - Example of a parent/child about page implementation
+ *   https://searchfox.org/mozilla-central/source/browser/components/newtab/AboutNewTabRedirector.sys.mjs#444
  */
 export class AboutMobile {
   constructor({ chromeUrl, aboutHost, classID, description, uriFlags }) {

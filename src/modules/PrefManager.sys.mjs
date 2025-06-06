@@ -3,7 +3,8 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 // TODO:
-// - Implement detection of UTF8 strings vs. chars
+// - Use PoliciesUtils and Service.prefs.* instead of our own module
+// https://searchfox.org/mozilla-central/source/browser/components/enterprisepolicies/Policies.sys.mjs#2808
 export class PrefManager {
   static pref(prefName, value) {
     try {

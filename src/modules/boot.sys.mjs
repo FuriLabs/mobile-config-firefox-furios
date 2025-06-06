@@ -19,15 +19,14 @@ const { UserAgentManager } = ChromeUtils.importESModule(
 const { StyleSheetManager } = ChromeUtils.importESModule(
     'chrome://mobileconfigfirefox/content/StyleSheetManager.sys.mjs'
 );
-//const { AboutUserChrome } = ChromeUtils.importESModule(
-//    'chrome://mobileconfigfirefox/content/AboutMobile.sys.mjs'
-//);
 const { AboutMobile } = ChromeUtils.importESModule(
     'chrome://mobileconfigfirefox/content/AboutMobile.sys.mjs'
 );
-const { FileExtendedUtils } = ChromeUtils.importESModule(
-    'chrome://mobileconfigfirefox/content/utils/FileExtendedUtils.sys.mjs'
-);
+
+const lazy = {};
+ChromeUtils.defineESModuleGetters(lazy, {
+  CustomizableUI: "resource:///modules/CustomizableUI.sys.mjs",
+});
 
 /**
  * Set prefereces on startup
@@ -49,16 +48,19 @@ function set_default_preferences() {
     PrefManager.defaultPref('dom.w3c.touch_events.enabled', true);
     PrefManager.defaultPref('dom.w3c_touch_events.legacy_apis.enabled', true);
     PrefManager.defaultPref('media.webrtc.camera.allow-pipewire', true);
+    PrefManager.defaultPref("screenshots.browser.component.enabled", false);
     PrefManager.defaultPref('toolkit.cosmeticAnimations.enabled', false);
     PrefManager.defaultPref('toolkit.legacyUserProfileCustomizations.stylesheets', true);
     PrefManager.defaultPref('widget.use-xdg-desktop-portal.file-picker', 1);
 }
 
+/**
+ * Register about:mobile
+ */
 function register_about_mobile() {
     // TODO:
     // - Move ComponentRegistrar and factory to the AboutMobile class
     // - Refactor AboutMobile.sys.mjs to be a generic about:page creator.
-
     const Cm = Components.manager.QueryInterface(Ci.nsIComponentRegistrar);
     const { ComponentUtils } = ChromeUtils.importESModule(
         "resource://gre/modules/ComponentUtils.sys.mjs"
@@ -71,7 +73,6 @@ function register_about_mobile() {
             description: "About Mobile Page",
             uriFlags:
               Ci.nsIAboutModule.ALLOW_SCRIPT |
-              Ci.nsIAboutModule.URI_SAFE_FOR_UNTRUSTED_CONTENT |
               Ci.nsIAboutModule.IS_SECURE_CHROME_UI,
         });
     });
@@ -83,6 +84,26 @@ function register_about_mobile() {
         factory
     );
 }
+
+/**
+ * Registers Fluent strings.
+ *
+ * TODO: This should be ideally moved in AboutMobile.sys.mjs
+ */
+function register_fluent_sources() {
+  try {
+    const aboutmobileFileSource = new L10nFileSource(
+      "aboutmobile",
+      "app",
+      ["en-US"],
+      `resource://aboutmobile/locales/{locale}/`
+    );
+    L10nRegistry.getInstance().registerSources([aboutmobileFileSource]);
+  } catch (e) {
+    console.error(`Error on registering fluent files:`, e);
+  }
+}
+
 /**
  * Bootstrapping
  */
@@ -91,13 +112,13 @@ function register_about_mobile() {
         set_default_preferences();
         const userAgent = new UserAgentManager();
         // TODO:
-        // - Find out if we can target the chrome and content context
-        //   individually instead of globally injecting all the styling in each
-        //   window.
+        // - Can we target chrome or content context separately?
         //   See: https://searchfox.org/mozilla-central/source/dom/interfaces/base/nsIDOMWindowUtils.idl#1891-1915
         const stylesheet = new StyleSheetManager();
+        // TODO:
+        // - Fix CSP issue that prevents to load our styles/scripts in about:mobile
         register_about_mobile();
-
+        register_fluent_sources();
     } catch(e) {
         console.log(e);
     }
