@@ -25,7 +25,7 @@ try {
     // We're converting our path to a nsIFile so it can be consumed by
     // autoRegister below.
     const chromeManifest =
-        new FileUtils.File("/etc/mobile-config-firefox/chrome.manifest");
+        new FileUtils.File("/usr/lib/mobile-config-firefox/chrome.manifest");
 
     if(chromeManifest.exists()){
         Components.manager.QueryInterface(Ci.nsIComponentRegistrar)
