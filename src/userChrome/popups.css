@@ -1,4 +1,4 @@
-/* Copyright 2024 Oliver Smith, Jesús Higueras, user0, Peter Mack *
+/* Copyright 2025 Oliver Smith, Jesús Higueras, user0, Peter Mack *
  * SPDX-License-Identifier: MPL-2.0 */
 
 @media (max-width: 700px) {
@@ -9,8 +9,7 @@
          * on-screen. */
         /* fixes for installing extensions */
         .popup-notification-panel  {
-            margin-top: -280px !important;
-            max-width: 98vw;
+            margin-top: -100vh !important;
         }
     }
 
