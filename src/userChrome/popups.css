@@ -81,15 +81,15 @@
  * incorrectly.
  */
 
-#appMenu-extensions-themes-button,
-#appMenu-print-button2,
-#appMenu-save-file-button2,
-#appMenu-passwords-button,
-#appMenu-help-button2,
-#appMenu-quit-button2,
-#appMenu-help-button2 + toolbarseparator,
-#appMenu-zoom-controls + toolbarseparator {
-    display: none !important;
+@media not (-moz-pref("mcf.fullappmenu")) {
+    #appMenu-extensions-themes-button,
+    #appMenu-passwords-button,
+    #appMenu-help-button2,
+    #appMenu-help-button2 + toolbarseparator,
+    #appMenu-more-button2,
+    #appMenu-report-broken-site-button {
+        display: none !important;
+    }
 }
 
 /* Hide some context menu items,
@@ -103,8 +103,6 @@
 #inspect-separator,
 #context-sep-selectall,
 #frame-sep,
-#appmenu-moreTools-button,
-#appmenu-moreTools-button + toolbarseparator,
 #overflowMenu-customize-button {
     display: none !important
 }
@@ -131,7 +129,7 @@ menupopup {
 browser.webextension-popup-browser {
     background: transparent !important;
     min-height: 40vh !important;
-    max-height: 70vh !important;
+    max-height: 80vh !important;
 }
 
 .webextension-popup-browser, .webextension-popup-stack {
