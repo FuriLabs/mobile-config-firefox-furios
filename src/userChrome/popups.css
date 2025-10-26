@@ -132,9 +132,10 @@ browser.webextension-popup-browser {
     max-height: 80vh !important;
 }
 
+/* Make large extensions (e.g., uBlock origin) popups useful
+ * by allowing them to be horizontally scrolled */
 .webextension-popup-browser, .webextension-popup-stack {
-    max-width: 100% !important;
+    max-width: 100vw !important;
     width: 100% !important;
-    min-width: 100% !important;
-    height: 100% !important;
+    overflow-x: scroll !important;
 }
