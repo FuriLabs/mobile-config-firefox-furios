@@ -29,6 +29,10 @@ aboutmobile-preference-mcfShowprotectionsicon =
     .label = Show Protections icon
     .description = Show Protections icon in the address bar
 
+aboutmobile-preference-mcfFullappmenu =
+    .label = Show full App Menu
+    .description = Don't hide any items in App Menu
+
 aboutmobile-preference-browserUrlbarTrimHttps =
     .label = Always show website's protocol
     .description = Show https prefix in the tab url
@@ -48,6 +52,3 @@ aboutmobile-section-features-description = By default, Mobile Config Firefox dis
 
 aboutmobile-preferences-mediaVideocontrolsPictureInPictureEnabled =
     .label = Disable Picture-in-Picture
-
-aboutmobile-preferences-extensionsPocketEnabled =
-    .label = Disable Pocket
