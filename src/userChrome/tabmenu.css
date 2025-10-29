@@ -52,8 +52,7 @@
     }
 
     /* Option to show multiple tabs in tab bar */
-    @media (-moz-bool-pref: "mcf.multipletabs"),
-        -moz-pref("mcf.multipletabs") {
+    @media -moz-pref("mcf.multipletabs") {
         /* Set small tabs width for small screens */
         #tabbrowser-tabs {
             --tab-min-width: 75px !important;
@@ -72,20 +71,17 @@
         }
 
         /* Optionally show close button on all tabs */
-        @media (-moz-bool-pref: "mcf.multipletabs.showclose"),
-            not (-moz-pref("mcf.multipletabs.showclose")) {
+        @media -moz-pref("mcf.multipletabs.showclose") {
             .tab-close-button, .close-icon, #tabbrowser-tabs[closebuttons="activetab"][orient="horizontal"] &:not([selected]) {
                 display: block !important;
             }
         }
     }
 
-    @media not (-moz-bool-pref: "mcf.addressbarontop"),
-        not (-moz-pref("mcf.addressbarontop")) {
+    @media not (-moz-pref("mcf.addressbarontop")) {
         /* Rotate the arrow on the "all tabs" button to point upwards, since the
          * tabs and searchbar were moved to the bottom. */
-        @media (-moz-bool-pref: "mcf.tabcounter.disable"),
-            -moz-pref("mcf.tabcounter.disable") {
+        @media -moz-pref("mcf.tabcounter.disable") {
             #alltabs-button {
                 transform: rotate(180deg) !important;
             }
