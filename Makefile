@@ -5,6 +5,9 @@ DESTDIR :=
 FIREFOX_DIR := /usr/lib/firefox
 FIREFOX_CONFIG_DIR := /usr/lib/mobile-config-firefox
 
+dummy:
+	@echo "Running 'make' is not needed anymore, just do 'sudo make install'."
+
 install:
 	src/prepare_install.sh "$(FIREFOX_DIR)" "$(DESTDIR)"
 	install -Dm644 src/policies.json \
