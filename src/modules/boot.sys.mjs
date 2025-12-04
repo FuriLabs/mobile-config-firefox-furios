@@ -44,7 +44,6 @@ function set_default_preferences() {
     PrefManager.defaultPref('browser.urlbar.suggest.topsites', false);
     PrefManager.defaultPref('browser.urlbar.trimHttps', true);
     PrefManager.defaultPref('dom.maxtouchpoints.testing.value', 1);
-    PrefManager.defaultPref('dom.w3c.touch_events.enabled', true);
     PrefManager.defaultPref('dom.w3c_touch_events.legacy_apis.enabled', true);
     PrefManager.defaultPref('media.webrtc.camera.allow-pipewire', true);
     PrefManager.defaultPref("screenshots.browser.component.enabled", false);

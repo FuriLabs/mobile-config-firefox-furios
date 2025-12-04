@@ -52,12 +52,6 @@
 * Reason: Use the xdg-desktop-portal.file-picker by default, e.g., for a native
   file-picker instead of gtk-file-picker on Plasma Mobile.
 
-### dom.w3c.touch_events.enabled
-
-* Value: true
-* Description: ...
-* Reason: Enable android-style pinch-to-zoom
-
 ### apz.allow_zooming
 
 * Value: true
