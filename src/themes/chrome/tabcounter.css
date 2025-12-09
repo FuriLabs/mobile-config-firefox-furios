@@ -6,7 +6,7 @@
  * https://old.reddit.com/r/FirefoxCSS/comments/yb8tr9/ */
 
 @media (max-width: 901px) {
-    @media not (-moz-pref("mcf.tabcounter.disable")) {
+    @media (-moz-pref("mcf.tabcounter.enabled")) {
         /* Show Tab Manager Menu button */
         #alltabs-button {
             display: -moz-box !important;

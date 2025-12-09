@@ -5,18 +5,35 @@ const {classes: Cc, interfaces: Ci, utils: Cu} = Components;
 
 class PreferencesObserver {
     constructor() {
+        this.init();
+    }
+    init() {
+        const toggles = document.getElementsByTagName("moz-toggle");
+
+        for (let toggle of toggles) {
+            let isPrefEnabled = Services.prefs.getBoolPref(toggle.dataset.preference);
+
+            if (isPrefEnabled) {
+                toggle.setAttribute("pressed", "true");
+            }
+        }
     }
     observe(subject, topic, data) {
-        const preferences = [
-            "mcf.addressbarontop",
-        ];
+        const toggles = document.getElementsByTagName("moz-toggle");
 
         switch (topic) {
             case "nsPref:changed":
-                if (preferences.includes(data)) {
-                    console.log("Match!");
+                for (let toggle of toggles) {
+                    if (toggle.dataset.preference === data) {
+                        let isPrefEnabled = Services.prefs.getBoolPref(
+                            toggle.dataset.preference
+                        );
+
+                        (isPrefEnabled) ?
+                            toggle.setAttribute("pressed", "true") :
+                            toggle.removeAttribute("pressed");
+                    }
                 }
-                console.log(`${topic}: ${data}`);
                 break;
         }
         window.addEventListener("unload", () => {
@@ -25,7 +42,6 @@ class PreferencesObserver {
     }
     // TODO:
     // - handle other form elements (e.g. input)
-    // - Fix default values for some preferences
     handleClick(event) {
         const target = event.target;
         switch (target.dataset.preferenceType) {

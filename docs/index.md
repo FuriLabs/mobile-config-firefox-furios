@@ -1,6 +1,15 @@
 # Mobile Config Firefox Documentation
 
-...
+## Preference naming convention
+
+* Always uses `mcf` as the root branch name
+* Boolean preferences should always end with `.enabled`
+* Use camel case if there's more than one word in one of the branch
+
+Example:
+```
+mcf.toolbar.tabCounter.enabled
+```
 
 ## Default Preferences
 
