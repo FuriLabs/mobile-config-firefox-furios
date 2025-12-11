@@ -31,14 +31,21 @@ install:
 	# StyleSheetManager
 	install -Dm644 src/modules/StyleSheetManager.sys.mjs \
 		"$(DESTDIR)/$(FIREFOX_CONFIG_DIR)/StyleSheetManager.sys.mjs"
-	install -dm755 "$(DESTDIR)/$(FIREFOX_CONFIG_DIR)/themes/chrome/"
-	install -dm755 "$(DESTDIR)/$(FIREFOX_CONFIG_DIR)/themes/content/"
-	install -Dm644 src/themes/main.css \
-		"$(DESTDIR)/$(FIREFOX_CONFIG_DIR)/themes/main.css"
-	install -Dm644 src/themes/chrome/*.css \
-		"$(DESTDIR)/$(FIREFOX_CONFIG_DIR)/themes/chrome/"
-	install -Dm644 src/themes/content/*.css \
-		"$(DESTDIR)/$(FIREFOX_CONFIG_DIR)/themes/content/"
+	## Shared theme
+	install -dm755 "$(DESTDIR)/$(FIREFOX_CONFIG_DIR)/themes/shared/chrome/"
+	install -dm755 "$(DESTDIR)/$(FIREFOX_CONFIG_DIR)/themes/shared/content/"
+	install -Dm644 src/themes/shared/main.css \
+		"$(DESTDIR)/$(FIREFOX_CONFIG_DIR)/themes/shared/main.css"
+	install -Dm644 src/themes/shared/chrome/*.css \
+		"$(DESTDIR)/$(FIREFOX_CONFIG_DIR)/themes/shared/chrome/"
+	install -Dm644 src/themes/shared/content/*.css \
+		"$(DESTDIR)/$(FIREFOX_CONFIG_DIR)/themes/shared/content/"
+	## ESR theme
+	install -Dm644 src/themes/esr/main.css \
+		"$(DESTDIR)/$(FIREFOX_CONFIG_DIR)/themes/esr/main.css"
+	## Release theme
+	install -Dm644 src/themes/release/main.css \
+		"$(DESTDIR)/$(FIREFOX_CONFIG_DIR)/themes/release/main.css"
 	# AboutMobile
 	install -Dm644 src/modules/AboutMobile.sys.mjs \
 		"$(DESTDIR)/$(FIREFOX_CONFIG_DIR)/AboutMobile.sys.mjs"
