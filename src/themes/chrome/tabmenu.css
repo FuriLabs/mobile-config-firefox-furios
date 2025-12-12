@@ -38,7 +38,8 @@
     /* Option to show multiple tabs in tab bar */
     @media -moz-pref("mcf.multipletabs") {
         /* Set small tabs width for small screens */
-        #tabbrowser-tabs {
+        #tabbrowser-tabs,
+        :root[privatebrowsingmode="temporary"] #tabbrowser-tabs {
             --tab-min-width: 75px !important;
             --tab-min-width-pref: 75px !important;
             --tab-max-width: 150px !important;
