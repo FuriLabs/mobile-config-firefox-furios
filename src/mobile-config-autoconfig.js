@@ -14,6 +14,37 @@ const { FileUtils } =
       ? ChromeUtils.importESModule("resource://gre/modules/FileUtils.sys.mjs")
       : Cu.import("resource://gre/modules/FileUtils.jsm");
 
+var g_chromeDir; // nsIFile object for the "chrome" dir in user's profile
+var g_logFileStream;
+
+
+function write_line(ostream, line) {
+    line = line + "\n"
+    ostream.write(line, line.length);
+}
+
+// Create <profile>/chrome/ directory if not already present
+function chrome_dir_init() {
+    g_chromeDir = Services.dirsvc.get("ProfD", Ci.nsIFile);
+    g_chromeDir.append("chrome");
+    if (!g_chromeDir.exists()) {
+        g_chromeDir.create(Ci.nsIFile.DIRECTORY_TYPE, FileUtils.PERMS_DIRECTORY);
+    }
+}
+
+function log_init() {
+    var mode = FileUtils.MODE_WRONLY | FileUtils.MODE_CREATE | FileUtils.MODE_APPEND;
+    var logFile = g_chromeDir.clone();
+    logFile.append("mobile-config-firefox.log");
+    g_logFileStream = FileUtils.openFileOutputStream(logFile, mode);
+}
+
+function log(line) {
+    var date = new Date().toISOString().replace("T", " ").slice(0, 19);
+    line = "[" + date + "] " + line;
+    write_line(g_logFileStream, line);
+}
+
 function is_css_file_from_old_mcf(css_file) {
         var istream = Cc["@mozilla.org/network/file-input-stream;1"].
                       createInstance(Components.interfaces.nsIFileInputStream);
@@ -40,19 +71,22 @@ function delete_old_mcf_files() {
      * userContent.css files into ~/.mozilla/firefox/<profile>/chrome/. This is
      * not necessary anymore and still having these old files with previous
      * customizations from MCF causes problems. Remove them. */
-    var chrome_dir = Services.dirsvc.get("ProfD", Ci.nsIFile);
-    chrome_dir.append("chrome");
     var names = ["userChrome", "userContent"];
 
     for (var i in names) {
         var name = names[i];
-        var css_file = chrome_dir.clone();
+        var css_file = g_chromeDir.clone()
         css_file.append(name + ".css");
 
-        if (css_file.exists() && is_css_file_from_old_mcf(css_file))
+        if (css_file.exists() && is_css_file_from_old_mcf(css_file)) {
+            log("Cleaning up CSS file from old mobile-config-firefox: " + name + ".css");
             css_file.remove(false);
+        }
     }
 }
+
+chrome_dir_init();
+log_init();
 
 try {
     delete_old_mcf_files();
@@ -78,8 +112,10 @@ try {
         );
     }
 } catch(e) {
+    log("mobile-config-autoconfig failed: " + e);
     // console.* isn't defined in autoconfig. We can use
     // Components.utils.reportError() for error messages or
     // Service.console.logStringMessage() for regular log messages.
     Cu.reportError(`Mobile Config Firefox: ${e}`);
 };
+g_logFileStream.close();
