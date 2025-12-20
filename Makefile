@@ -44,8 +44,11 @@ install:
 	install -Dm644 src/themes/esr/main.css \
 		"$(DESTDIR)/$(MCF_DIR)/themes/esr/main.css"
 	## Release theme
+	install -dm755 "$(DESTDIR)/$(MCF_DIR)/themes/release/chrome/"
 	install -Dm644 src/themes/release/main.css \
 		"$(DESTDIR)/$(MCF_DIR)/themes/release/main.css"
+	install -Dm644 src/themes/release/chrome/*.css \
+		"$(DESTDIR)/$(MCF_DIR)/themes/release/chrome/"
 	# AboutMobile
 	install -Dm644 src/modules/AboutMobile.sys.mjs \
 		"$(DESTDIR)/$(MCF_DIR)/AboutMobile.sys.mjs"
