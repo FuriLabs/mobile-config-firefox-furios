@@ -17,7 +17,7 @@ aboutmobile-preference-mcfMultipletabsClose =
     .label = Tab close button
     .description = Show a close button on each tab
 
-aboutmobile-preference-mcfTabcounterDisable =
+aboutmobile-preference-mcfToolbarTabCounterEnable =
     .label = Show tab counter
     .description = Show the number of opened tabs on the list all tabs icon
 

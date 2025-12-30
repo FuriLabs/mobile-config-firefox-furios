@@ -74,7 +74,7 @@
     @media not (-moz-pref("mcf.addressbarontop")) {
         /* Rotate the arrow on the "all tabs" button to point upwards, since the
          * tabs and searchbar were moved to the bottom. */
-        @media -moz-pref("mcf.tabcounter.disable") {
+        @media not -moz-pref("mcf.toolbar.tabCounter.enabled") {
             #alltabs-button {
                 transform: rotate(180deg) !important;
             }
