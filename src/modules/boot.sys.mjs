@@ -53,7 +53,7 @@ function set_default_preferences() {
 
     PrefManager.defaultPref('mcf.multipletabs', false);
     PrefManager.defaultPref('mcf.multipletabs.showclose', false);
-    PrefManager.defaultPref('mcf.tabcounter.enabled', false);
+    PrefManager.defaultPref('mcf.toolbar.tabCounter.enabled', true);
     PrefManager.defaultPref('mcf.addressbarontop', false);
     PrefManager.defaultPref('mcf.fullappmenu', false);
     PrefManager.defaultPref('mcf.showprotectionsicon', false);
