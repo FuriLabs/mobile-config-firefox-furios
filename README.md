@@ -75,33 +75,11 @@ them on your phone).
 To remove elements (e.g., the reload button, if you do not use it often) you tap
 and hold the extensions Menu and select "Customize Toolbar".
 
-If you don't like that the Firefox UI is moved to the bottom, you can undo this
-change by adding `mcf.addressbarontop` and set it to true in `about:config`.
+If you don't like that the Firefox UI is moved to the bottom, or you don't like
+the tabcounter, you can go to our custom `about:mobile` page and change things
+to your liking.
 
-If you don't like the single tab mode, you can show multiple tabs in tab-bar
-by adding `mcf.multipletabs` and set it to true in `about:config`. If you want
-to have a close button on every tab, add `mcf.multipletabs.showclose` and set it
-to true. If you don't like the tab counter, you can disable it by adding
-`mcf.tabcounter.disable` in `about:config` and setting it to true.
-
-If you want to use the protections icon in urlbar, you can unhide it by
-adding  `mcf.showprotectionsicon` and set it to true in `about:config`.
-
-If you don't like the hiding of https:// in the urlbar, you can get back to
-default behavior by setting `browser.urlbar.trimHttps` to false in
-`about:config`.
-
-If you should have issues with the file picker, you can set
-`widget.use-xdg-desktop-portal.file-picker` to 2 in about:config.
-
-If it cannot be changed in preferences, look in
-`/etc/firefox/policies/policies.json`. You can see the active policies while
-Firefox is running in `about:policies`. The uBlock origin add-on for example,
-is getting installed through `policies.json` and can be removed in that file
-if you do not want it. Without editing the file, it can only be disabled in the
-add-on settings, and not removed, this is a limitation of `policies.json`. If
-you just want to un-pin uBlock Origin, long-pressing its icon and de-selecting
-"Pin to toolbar" should be enough.
+See also: [Docs](https://gitlab.postmarketos.org/postmarketOS/mobile-config-firefox/-/blob/main/docs/index.md)
 
 Feel free to
 [create an issue](https://gitlab.postmarketos.org/postmarketOS/mobile-config-firefox/-/issues)
@@ -111,6 +89,7 @@ if you run into problems. Or even better, attempt to fix the problem yourself
 
 
 ## Contributing changes to userChrome
+
 Firefox' developer tools include a
 [remote debugger](https://developer.mozilla.org/en-US/docs/Tools/Remote_Debugging),
 which even has the "pick an element" feature. You will be able to click that
@@ -186,6 +165,8 @@ please report it there first:
 packaging, [downstream patches](https://salsa.debian.org/DebianOnMobile-team/firefox-esr-mobile-config/-/tree/debian/latest/debian/patches)
 * PureOS [firefox-esr-mobile-config](https://source.puri.sm/Librem5/debs/firefox-esr-mobile-config)
 packaging, [downstream patches](https://source.puri.sm/Librem5/debs/firefox-esr-mobile-config/-/tree/pureos/latest/debian/patches)
+* PocketBlue [firefox-systemconfig](https://github.com/pocketblue/firefox-systemconfig) flatpak packaging,
+* PocketBlue [handyfox](https://github.com/pocketblue/handyfox), flatpak packaging, "goal is to provide a browser for mobile devices with mobile-config-firefox and firefox-gnome-theme prenistalled", [patches](https://github.com/pocketblue/handyfox/tree/main/modules/mobile-config/patches).
 
 ### Forks
 
@@ -209,7 +190,7 @@ This project is does not share history or code, but accomplishes something simil
 
 * [How to use the Firefox Browser Toolbox](https://developer.mozilla.org/en-US/docs/Tools/Browser_Toolbox)
 * [firefox-csshacks](https://github.com/MrOtherGuy/firefox-csshacks/)
+* [fx-css-variables.txt](https://gist.github.com/MrOtherGuy/a673848c95823225f7b198199f87a396)
 * [FirefoxCSS subreddit](https://www.reddit.com/r/FirefoxCSS/)
 * [whattrainisitnow.com](https://whattrainisitnow.com/): FF and FF ESR releases
   currently supported upstream, we try to support these with this config
-
