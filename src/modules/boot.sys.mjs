@@ -51,12 +51,12 @@ function set_default_preferences() {
     PrefManager.defaultPref('toolkit.legacyUserProfileCustomizations.stylesheets', true);
     PrefManager.defaultPref('widget.use-xdg-desktop-portal.file-picker', 1);
 
-    PrefManager.defaultPref('mcf.multipletabs', false);
-    PrefManager.defaultPref('mcf.multipletabs.showclose', false);
+    PrefManager.defaultPref('mcf.tabs.showFocusedTabOnly.enabled', true);
+    PrefManager.defaultPref('mcf.tabs.alwaysShowCloseButton', false);
     PrefManager.defaultPref('mcf.toolbar.tabCounter.enabled', true);
-    PrefManager.defaultPref('mcf.addressbarontop', false);
-    PrefManager.defaultPref('mcf.fullappmenu', false);
-    PrefManager.defaultPref('mcf.showprotectionsicon', false);
+    PrefManager.defaultPref('mcf.toolbar.positionOnTop', false);
+    PrefManager.defaultPref('mcf.appmenu.showAllEntries', false);
+    PrefManager.defaultPref('mfc.urlbar.showTrustButton', false);
 }
 
 /**

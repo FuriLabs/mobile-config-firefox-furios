@@ -2,7 +2,7 @@
  * SPDX-License-Identifier: MPL-2.0 */
 
 @media (max-width: 700px) {
-    @media not (-moz-pref("mcf.addressbarontop")) {
+    @media not (-moz-pref("mcf.toolbar.positionOnTop")) {
         /* If the navbar is at the bottom, we need to set an offset to have
          * the notifications (like the one for installing addons) displayed
          * on-screen. */
@@ -63,7 +63,7 @@
     }
 }
 
-@media ((min-width: 701px) or (-moz-pref("mcf.addressbarontop"))) {
+@media ((min-width: 701px) or (-moz-pref("mcf.toolbar.positionOnTop"))) {
     panel, box.panel-viewcontainer > box.panel-viewstack {
         align-content: flex-start;
     }
@@ -80,7 +80,7 @@
  * incorrectly.
  */
 
-@media not (-moz-pref("mcf.fullappmenu")) {
+@media not (-moz-pref("mcf.appmenu.showAllEntries")) {
     #appMenu-extensions-themes-button,
     #appMenu-passwords-button,
     #appMenu-help-button2,
