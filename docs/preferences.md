@@ -1,4 +1,7 @@
-# Mobile Config Firefox Documentation
+# Preferences
+
+Mobile-Config-Firefox has custom preferences, which can be set via the
+`about:mobile` page (or alternatively in `about:config`).
 
 ## Preference naming convention
 
