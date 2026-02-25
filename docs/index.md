@@ -10,4 +10,5 @@
    log-file
    remote-debugger
    coding-guidelines
+   related-projects
 ```
