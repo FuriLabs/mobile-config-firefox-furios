@@ -4,6 +4,7 @@
 .. toctree::
    :hidden:
 
+   features
    installation
    customization
    preferences
