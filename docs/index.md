@@ -11,4 +11,5 @@
    remote-debugger
    coding-guidelines
    related-projects
+   additional-resources
 ```
