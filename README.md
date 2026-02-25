@@ -40,16 +40,6 @@ There's a
 [screenshot thread](https://fosstodon.org/web/@ollieparanoid/107394745970284867)
 of the `3.0.0_rc1` release.
 
-## Log file
-
-The `src/mobile-config-autoconfig.js` script generates `userChrome.css` and
-`userContent.css` while Firefox starts. It logs to your Firefox profile
-directory, follow the log file with:
-
-```
-$ tail -F $(find ~/.mozilla -name mobile-config-firefox.log)
-```
-
 ## Coding guidelines
 
 * Don't make longer lines than 79 columns where possible (like in PEP-8)
