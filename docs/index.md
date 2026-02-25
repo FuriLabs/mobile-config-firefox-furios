@@ -7,4 +7,5 @@
    installation
    customization
    preferences
+   remote-debugger
 ```
