@@ -40,32 +40,6 @@ There's a
 [screenshot thread](https://fosstodon.org/web/@ollieparanoid/107394745970284867)
 of the `3.0.0_rc1` release.
 
-## Manual install
-
-If you want to install this config, e.g., to see if a bug is still present in
-the current state of the project, or to test your changes, clone the repository
-(or download it).
-
-From inside the `mobile-config-firefox` folder run
-
-~~~
-sudo make FIREFOX_DIR=/usr/lib/firefox-esr install
-~~~
-
-for Firefox ESR. For [other variants](https://whattrainisitnow.com/) of Firefox, change the part after
-`FIREFOX_DIR=`
-
-* Release: `/usr/lib/firefox` (or plain `sudo make install`, as it's the default value if none is set)
-* Beta: `/usr/lib/firefox-beta`
-* Nightly: `/usr/lib/firefox-nightly`
-* Librewolf: `/usr/lib/librewolf`
-
-Testing with Beta and Nightly is possible via a Debian distrobox using
-[Mozilla's repo](https://blog.nightly.mozilla.org/2023/10/30/introducing-mozillas-firefox-nightly-deb-packages-for-debian-based-linux-distributions/). The easiest way to add the mozilla repo is via [extrepo](https://manpages.debian.org/trixie/extrepo/extrepo.1p.en.html).
-
-Flatpak installs are [currently unsupported](https://gitlab.postmarketos.org/postmarketOS/mobile-config-firefox/-/issues/104)
-, help welcome!
-
 ## For users: making changes
 
 As user, it is possible to override all options set by this project. Usually it

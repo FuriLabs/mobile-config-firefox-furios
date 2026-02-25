@@ -4,5 +4,6 @@
 .. toctree::
    :hidden:
 
+   installation
    preferences
 ```
