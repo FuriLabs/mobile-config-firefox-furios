@@ -9,4 +9,5 @@
    preferences
    log-file
    remote-debugger
+   coding-guidelines
 ```

@@ -40,15 +40,6 @@ There's a
 [screenshot thread](https://fosstodon.org/web/@ollieparanoid/107394745970284867)
 of the `3.0.0_rc1` release.
 
-## Coding guidelines
-
-* Don't make longer lines than 79 columns where possible (like in PEP-8)
-* Use 4 spaces for indent in all files, except for shell scripts (use tabs
-  there). Consider configuring your editor to use `.editorconfig`, then it gets
-  configured automatically.
-* Linter: `.ci/lint.sh` (consider setting it as pre-commit hook, requires GNU
-  grep)
-
 ## Packaging, forks and similar efforts
 
 ### Packaging with patches
