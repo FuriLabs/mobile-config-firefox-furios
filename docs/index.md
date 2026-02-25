@@ -5,5 +5,6 @@
    :hidden:
 
    installation
+   customization
    preferences
 ```
