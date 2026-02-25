@@ -1,9 +1,8 @@
 # mobile-config-firefox
 
-Mobile and privacy friendly configuration for current standard and extended
-support releases of Firefox.
+Find the documentation at
+[docs.postmarketos.org/mobile-config-firefox](https://docs.postmarketos.org/mobile-config-firefox)
+or `docs/` in this repository.
 
-## Matrix / IRC channel
-
-* Matrix: `#mobile-config-firefox:postmarketos.org`
-* IRC: `#mobile-config-firefox` at OFTC
+The upstream repository is
+[here](https://gitlab.postmarketos.org/postmarketOS/mobile-config-firefox/).
