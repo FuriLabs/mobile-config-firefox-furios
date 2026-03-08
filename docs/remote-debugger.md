@@ -5,8 +5,7 @@ Firefox' developer tools include a
 which even has the "pick an element" feature. You will be able to click that
 button on your PC, then tap on an element of the Firefox UI on your phone, and
 then you will see the HTML code and CSS properties on your PC just as if it was
-a website. So this is highly recommended when contributing changes to
-`userChrome.css`.
+a website.
 
 * Connect your phone and your PC to the same network (Wi-Fi or USB network)
 * On your phone, open Firefox and `about:config`:
@@ -36,9 +35,7 @@ a website. So this is highly recommended when contributing changes to
       virtual keyboard, hit "tab" three times and then return
 * On your PC
   * Scroll down to Processes, Main Process, and click "Inspect"
-  * Now use the "Pick an element" button as described in the introduction. Find
-    the `userChrome.css` file in the "Style editor" tab and edit it as you
-    like.
+  * Now use the "Pick an element" button as described in the introduction.
   * Consider copy pasting the contents to a text editor every now and then, so
     you don't lose it when closing Firefox by accident.
 
