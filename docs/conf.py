@@ -21,7 +21,7 @@ exclude_patterns = ["_build", "_out", "Thumbs.db", ".DS_Store", ".venv", "README
 
 html_theme = "pmos"
 html_theme_options = {
-    "source_edit_link": "https://gitlab.postmarketos.org/postmarketOS/mobile-config-firefox/-/blob/master/docs/{filename}",
+    "source_edit_link": "https://gitlab.postmarketos.org/postmarketOS/mobile-config-firefox/-/blob/main/docs/{filename}",
     "logo": "_static/logo.png",
 }
 html_static_path = ["_static"]
