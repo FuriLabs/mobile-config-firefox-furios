@@ -31,6 +31,18 @@
         display: none !important;
     }
 
+    /* Show sidebar-button when vertical tabs are enabled */
+    @media -moz-pref("sidebar.verticalTabs") {
+        #sidebar-button {
+            display: flex !important;
+        }
+        /* Hide spacer and alltabs-button*/
+        #alltabs-button,
+        #vertical-spacer {
+            display: none;
+        }
+    }
+
     #urlbar {
         padding: 0px 5px;
     }
