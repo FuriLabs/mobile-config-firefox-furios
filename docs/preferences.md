@@ -125,3 +125,14 @@ mcf.toolbar.tabCounter.enabled
 * Description: ...
 * Reason: Reduce CPU usage.
 
+### browser.ai.control.default
+
+* Value: 'blocked'
+* Description: Turn AI killswitch to off
+* Reason: Reduce CPU usage.
+
+### browser.ai.control.translations
+
+* Value: 'available'
+* Description: Translation service
+* Reason: Keep translations feature despite the AI killswitch has been switched to off.
