@@ -35,6 +35,8 @@ ChromeUtils.defineESModuleGetters(lazy, {
 function set_default_preferences() {
     PrefManager.defaultPref('apz.allow_zooming', true);
     PrefManager.defaultPref('apz.allow_double_tap_zooming', true);
+    PrefManager.defaultPref('browser.ai.control.default', 'blocked');
+    PrefManager.defaultPref('browser.ai.control.translations', 'available');
     PrefManager.defaultPref('browser.download.animateNotifications', false);
     PrefManager.defaultPref('browser.newtabpage.enabled', false);
     PrefManager.defaultPref('browser.search.suggest.enabled', false);
