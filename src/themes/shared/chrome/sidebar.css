@@ -1,0 +1,11 @@
+/* Copyright 2026 Peter Mack *
+ * SPDX-License-Identifier: MPL-2.0 */
+
+/* Apply this customization only on smaller screens in portrait mode */
+@media (orientation: portrait) and (max-width: 720px) {
+
+    /* Hide sidebar when vertical tabs are enabled */
+    #sidebar-main:not([sidebar-launcher-expanded]) {
+        display: none !important;
+    }
+}
