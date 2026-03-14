@@ -5,7 +5,7 @@
  * https://old.reddit.com/r/FirefoxCSS/comments/s4wsww/
  * https://old.reddit.com/r/FirefoxCSS/comments/yb8tr9/ */
 
-@media (-moz-pref("mcf.toolbar.tabCounter.enabled")) {
+@media (-moz-pref("mcf.toolbar.tabCounter.enabled")) and (not (-moz-pref("sidebar.verticalTabs"))) {
     /* Show Tab Manager Menu button */
     #alltabs-button {
         display: -moz-box !important;
