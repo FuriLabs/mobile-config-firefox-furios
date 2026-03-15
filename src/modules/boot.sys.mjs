@@ -40,6 +40,7 @@ function set_default_preferences() {
     PrefManager.defaultPref('browser.download.animateNotifications', false);
     PrefManager.defaultPref('browser.newtabpage.enabled', false);
     PrefManager.defaultPref('browser.search.suggest.enabled', false);
+    PrefManager.defaultPref('browser.tabs.hoverPreview.enabled', false);
     PrefManager.defaultPref('browser.tabs.inTitlebar', 1);
     PrefManager.defaultPref('browser.urlbar.clickSelectsAll', true);
     PrefManager.defaultPref('browser.urlbar.suggest.engines', false);
