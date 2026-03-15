@@ -146,6 +146,22 @@
     :root {
         --bookmarks-toolbar-overlapping-browser-height: 0 !important;
     }
+
+    /* Smaller private browsing indicator with vertical tabs */
+    @media -moz-pref("sidebar.verticalTabs") {
+        .private-browsing-indicator-icon {
+            width: 10px !important;
+            height: 10px !important;
+        }
+        .private-browsing-indicator-with-label {
+            align-items: unset !important;
+            margin-inline: 0 !important;
+        }
+
+        :root[privatebrowsingmode="temporary"] #PanelUI-menu-button {
+            padding-right: 0 !important;
+        }
+    }
 }
 
 /* Even though amazon is removed as search engine in policies.json, it gets
