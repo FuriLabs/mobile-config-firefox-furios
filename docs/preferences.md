@@ -136,3 +136,33 @@ mcf.toolbar.tabCounter.enabled
 * Value: 'available'
 * Description: Translation service
 * Reason: Keep translations feature despite the AI killswitch has been switched to off.
+
+### browser.ml.chat.enabled
+
+* Value: false
+* Description: Disable AI chat feature
+* Reason: Declutter tab bar with vertical tabs.
+
+### browser.ml.chat.menu
+
+* Value: false
+* Description: AI chat interaction from context menu
+* Reason: Declutter context menu, LLMs bad.
+
+### sidebar.main.tools
+
+* Value: 'aichat'
+* Description: Menu items next to Customize icon in vertical tab sidebar
+* Reason: Don't show poorly working (width too narrow) history menus by default, improves landscape experience (set to aichat as setting to '' has no effect).
+
+### sidebar.verticalTabs.dragToPinPromo.dismissed
+
+* Value: true
+* Description: Hint that suggests dragging tabs to the top to pin them
+* Reason: Dismiss outright, as tab dragging does not work with touch.
+
+### browser.tabs.hoverPreview.enabled
+
+* Value: false
+* Description: Small preview popups
+* Reason: Hide to avoid interference with/overlap of the urlbar with vertical tabs.
