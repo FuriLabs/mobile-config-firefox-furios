@@ -38,6 +38,8 @@ function set_default_preferences() {
     PrefManager.defaultPref('browser.ai.control.default', 'blocked');
     PrefManager.defaultPref('browser.ai.control.translations', 'available');
     PrefManager.defaultPref('browser.download.animateNotifications', false);
+    PrefManager.defaultPref('browser.ml.chat.enabled', false);
+    PrefManager.defaultPref('browser.ml.chat.menu', false);
     PrefManager.defaultPref('browser.newtabpage.enabled', false);
     PrefManager.defaultPref('browser.search.suggest.enabled', false);
     PrefManager.defaultPref('browser.tabs.hoverPreview.enabled', false);
@@ -50,6 +52,8 @@ function set_default_preferences() {
     PrefManager.defaultPref('dom.w3c_touch_events.legacy_apis.enabled', true);
     PrefManager.defaultPref('media.webrtc.camera.allow-pipewire', true);
     PrefManager.defaultPref("screenshots.browser.component.enabled", false);
+    PrefManager.defaultPref('sidebar.main.tools', 'aichat');
+    PrefManager.defaultPref('sidebar.verticalTabs.dragToPinPromo.dismissed', true);
     PrefManager.defaultPref('toolkit.cosmeticAnimations.enabled', false);
     PrefManager.defaultPref('toolkit.legacyUserProfileCustomizations.stylesheets', true);
     PrefManager.defaultPref('widget.use-xdg-desktop-portal.file-picker', 1);
