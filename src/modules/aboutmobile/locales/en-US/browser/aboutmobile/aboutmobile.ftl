@@ -11,7 +11,7 @@ aboutmobile-section-general-title = General
 
 aboutmobile-preference-mcfShowFocusedTabOnlyEnable =
     .label = Show focused tab only
-    .description = Don't show multiple tabs, only show the active tab in the Tab Bar
+    .description = Don't show multiple tabs, only show the active tab in the Tab Bar (horizontal tabs only)
 
 aboutmobile-preference-mcfTabsAlwaysShowCloseButton =
     .label = Tab close button
