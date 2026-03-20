@@ -21,6 +21,9 @@ const { StyleSheetManager } = ChromeUtils.importESModule(
 const { AboutMobile } = ChromeUtils.importESModule(
     'chrome://mobileconfigfirefox/content/AboutMobile.sys.mjs'
 );
+const { TabCounter } = ChromeUtils.importESModule(
+    'chrome://mobileconfigfirefox/content/TabCounter.sys.mjs'
+);
 
 const lazy = {};
 ChromeUtils.defineESModuleGetters(lazy, {
@@ -128,6 +131,12 @@ function register_fluent_sources() {
         // - Can we target chrome or content context separately?
         //   See: https://searchfox.org/mozilla-central/source/dom/interfaces/base/nsIDOMWindowUtils.idl#1891-1915
         const stylesheet = new StyleSheetManager();
+        try {
+            const tabCounter = new TabCounter();
+            tabCounter.init();
+        } catch(e) {
+            console.error("TabCounter failed to initialize:", e);
+        }
         // TODO:
         // - Fix CSP issue that prevents to load our styles/scripts in about:mobile
         register_about_mobile();
