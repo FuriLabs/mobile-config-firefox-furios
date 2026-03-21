@@ -29,7 +29,8 @@ export class TabCounter {
     _setupForWindow(window) {
         const updateCount = () => {
             const count = window.gBrowser.tabs.length;
-            window.document.documentElement.style.setProperty('--tab-count', `"${count}"`);
+            const displayValue = count > 99 ? '∞' : count;
+            window.document.documentElement.style.setProperty('--tab-count', `"${displayValue}"`);
         };
 
         updateCount();
