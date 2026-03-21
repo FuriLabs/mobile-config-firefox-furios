@@ -52,3 +52,6 @@ aboutmobile-section-features-description = By default, Mobile Config Firefox dis
 
 aboutmobile-preferences-mediaVideocontrolsPictureInPictureEnabled =
     .label = Disable Picture-in-Picture
+
+aboutmobile-preference-mcfContextmenuShowInspector =
+    .label = Show Inspect in Context Menu

@@ -63,6 +63,7 @@ function set_default_preferences() {
     PrefManager.defaultPref('mcf.toolbar.tabCounter.enabled', true);
     PrefManager.defaultPref('mcf.toolbar.positionOnTop', false);
     PrefManager.defaultPref('mcf.appmenu.showAllEntries', false);
+    PrefManager.defaultPref('mcf.contextmenu.showInspector', false);
     PrefManager.defaultPref('mfc.urlbar.showTrustButton', false);
 }
 
