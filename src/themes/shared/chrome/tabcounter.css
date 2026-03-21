@@ -12,14 +12,6 @@
     }
 
     /* Tab Manager Menu button tab counter */
-    #TabsToolbar-customization-target {
-        counter-reset: tabCount;
-    }
-
-    .tabbrowser-tab {
-        counter-increment: tabCount;
-    }
-
     #alltabs-button > .toolbarbutton-badge-stack > .toolbarbutton-icon {
         visibility: collapse !important;
     }
@@ -29,7 +21,7 @@
     }
 
     #alltabs-button > .toolbarbutton-badge-stack::before {
-        content: counter(tabCount);
+        content: var(--tab-count, "0");
         color: var(--toolbarbutton-icon-fill);
         opacity: var(--toolbarbutton-icon-fill-opacity);
         position: absolute;
