@@ -115,15 +115,6 @@ menupopup {
     min-block-size: max-content !important;
 }
 
-.menupopup-arrowscrollbox {
-    width: max-content !important;
-    max-width: calc(100vw - 16px) !important;
-    height: max-content !important;
-    max-height: calc(100vh - 16px) !important;
-    display: block !important;
-    overflow: clip !important;
-}
-
 /* Fix webextension popups */
 browser.webextension-popup-browser {
     background: transparent !important;
