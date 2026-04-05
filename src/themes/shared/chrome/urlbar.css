@@ -109,6 +109,13 @@
         display: none;
     }
 
+    /* Hide label of the new Trust indicator (FF 149+), that shows a giant
+     * 'Not secure' when on http:// only pages. The icon itself is still
+     * visible. */
+    #trust-icon-container #trust-label {
+        display: none;
+    }
+
     /* Move urlbar results to cover the whole displayed website, instead of
      * being below the urlbar. */
     .urlbarView {
