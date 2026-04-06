@@ -1,0 +1,99 @@
+Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Upstream-Name: mobile-config-firefox
+Upstream-Contact: Oliver Smith <ollieparanoid@postmarketos.org>
+Source: https://gitlab.postmarketos.org/postmarketOS/mobile-config-firefox
+
+Files: *
+Copyright: 2020-2025 Oliver Smith <ollieparanoid@postmarketos.org>
+License: MPL-2.0
+
+Files: debian/*
+Copyright: 2020-2025 Arnaud Ferraris <aferraris@debian.org>
+License: MPL-2.0
+
+Files: src/mobile-config-autoconfig.js
+Copyright: 2021-2025 Oliver Smith <ollieparanoid@postmarketos.org>
+           2021-2022 Arnaud Ferraris <aferraris@debian.org>
+           2025 Danny Colin
+License: MPL-2.0
+
+Files: src/mobile-config-prefs.js
+Copyright: 2021-2022 Oliver Smith <ollieparanoid@postmarketos.org>
+           2021-2022 Martijn Braam <martijn@brixit.nl>
+License: MPL-2.0
+
+Files: src/modules/*
+Copyright: 2025 Danny Colin
+License: MPL-2.0
+
+Files: src/themes/shared/chrome/browser.css
+Copyright: 2021-2022 plata
+License: MPL-2.0
+
+Files: src/themes/shared/chrome/popups.css
+Copyright: 2025 Oliver Smith
+           2025 Jesús Higueras
+           2025 user0
+           2025 Peter Mack
+License: MPL-2.0
+
+Files: src/themes/shared/chrome/tabcounter.css
+Copyright: 2024 user0
+           2024 Peter Mack
+License: MPL-2.0
+
+Files: src/themes/release/chrome/tabmenu.css
+       src/themes/shared/chrome/tabmenu.css
+       src/themes/shared/chrome/urlbar.css
+Copyright: 2021-2025 Oliver Smith <ollieparanoid@postmarketos.org>
+           2021-2025 Peter Mack
+License: MPL-2.0
+
+Files: src/themes/shared/content/addons.css
+       src/themes/shared/content/config.css
+       src/themes/shared/content/license.css
+       src/themes/shared/content/logins.css
+       src/themes/shared/content/policies.css
+       src/themes/shared/content/preferences.css
+       src/themes/shared/content/protections.css
+       src/themes/shared/content/rights.css
+Copyright: 2021-2022 Anri Dellal
+License: MPL-2.0
+
+Files: src/themes/shared/content/reader.css
+Copyright: 2021-2022 Tim Magee
+License: MPL-2.0
+
+Files: src/themes/shared/content/sidebar.css
+Copyright: 2021-2022 plata
+           2021-2022 Anri Dellal
+License: MPL-2.0
+
+Files: src/themes/esr/main.css
+       src/themes/release/main.css
+       src/themes/shared/main.css
+Copyright: 2025 Danny Colin
+License: MPL-2.0
+
+Files: org.postmarketos.mobile_config_firefox.metainfo.xml
+Copyright: 2022 plata
+License: CC0-1.0
+
+License: CC0-1.0
+ This work has been dedicated to the public domain.
+ .
+ On Debian systems, the complete text of the CC0 License version 1 can be found
+ in "/usr/share/common-licenses/CC0-1.0".
+
+License: MPL-2.0
+ The contents of this file are subject to the Mozilla Public License Version
+ 2.0 (the "License"); you may not use this file except in compliance with
+ the License.
+ .
+ Software distributed under the License is distributed on an "AS IS" basis,
+ WITHOUT WARRANTY OF ANY KIND, either express or implied. See the License
+ for the specific language governing rights and limitations under the
+ License.
+ .
+ On Debian systems, the complete text of the Mozilla Public License Version
+ 2.0 can be found in /usr/share/common-licenses/MPL-2.0.
