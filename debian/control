@@ -12,6 +12,9 @@ Package: mobile-config-firefox-furios
 Architecture: all
 Depends: ${misc:Depends},
          firefox (>= 149~),
+Replaces: furios-firefox-tweaks
+Provides: furios-firefox-tweaks
+Conflicts: furios-firefox-tweaks
 Description: Default mobile-friendly configuration for Firefox ESR
  This package provides a set of configuration files aimed at making Firefox ESR
  more mobile-friendly. It provides:
