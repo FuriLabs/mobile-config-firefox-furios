@@ -18,19 +18,17 @@ export class UserAgentManager {
     const UA_CHROME_CHROMEOS =
           "Mozilla/5.0 (X11; CrOS aarch64 16503.74.0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.7559.172 Safari/537.36";
     // Set default user agent
-    PrefManager.defaultPref('general.useragent.override', UA_FIREFOX_DESKTOP);
+    PrefManager.defaultPref('general.useragent.override', UA_FIREFOX_ANDROID);
 
     const userAgentRules = {
         // Google
         // FIX: Google login not trusting the browser
         "^https?://accounts.google.com($|/)": UA_FIREFOX_DESKTOP,
-        // FIX: Google Search showing up as the old layout
-        "^https?://(www.)?google.com($|/)": UA_FIREFOX_ANDROID,
         // FIX: ???
         "^https?://drive.google.com($|/)": UA_CHROME_ANDROID,
         // FIX: Google Maps search bar not being interactive
-        "^https?://(www.)?google.com/maps($|/)": UA_FIREFOX_DESKTOP,
-        "^https?://maps.google.com($|/)": UA_FIREFOX_DESKTOP,
+        "^https?://(www.)?google\\.[^/]+/maps($|/)": UA_FIREFOX_DESKTOP,
+        "^https?://maps.google\\.[^/]+($|/)": UA_FIREFOX_DESKTOP,
 
         // Firefox
         // FIX: Sync login not completing
@@ -47,6 +45,9 @@ export class UserAgentManager {
         // Netflix
         // FIX: Netflix refusing to playback even if EME is working
         "^https?://(www.)?netflix.com($|/)": UA_CHROME_CHROMEOS,
+
+        // FIX: Google Search showing up as the old layout
+        "^https?://(www.)?google.*/": UA_CHROME_ANDROID,
     };
 
 
