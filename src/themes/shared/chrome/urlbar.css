@@ -1,4 +1,4 @@
-/* Copyright 2025 Oliver Smith, Peter Mack
+/* Copyright 2026 Oliver Smith, Jesús Higueras, Peter Mack
  * SPDX-License-Identifier: MPL-2.0 */
 
 /* Reduce minimum window width */
@@ -214,4 +214,9 @@
  * regex. */
 button[id^="urlbar-engine-one-off-item-Amazon"] {
     display: none !important;
+}
+
+/* Ensure the URL bar's suggestions are always visible */
+#navigator-toolbox {
+    z-index: 9999 !important;
 }
