@@ -6,7 +6,8 @@
         display: flex;
     }
 
-    #policies-container {
+    #policies-container,
+    #policies-container-content {
         display: none;
     }
 
