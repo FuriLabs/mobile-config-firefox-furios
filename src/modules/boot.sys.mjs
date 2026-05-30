@@ -41,6 +41,7 @@ function set_default_preferences() {
     PrefManager.defaultPref('browser.ai.control.default', 'blocked');
     PrefManager.defaultPref('browser.ai.control.translations', 'available');
     PrefManager.defaultPref('browser.download.animateNotifications', false);
+    PrefManager.defaultPref('browser.ipProtection.enabled', false);
     PrefManager.defaultPref('browser.ml.chat.enabled', false);
     PrefManager.defaultPref('browser.ml.chat.menu', false);
     PrefManager.defaultPref('browser.newtabpage.enabled', false);
