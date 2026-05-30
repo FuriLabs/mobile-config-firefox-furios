@@ -37,6 +37,10 @@ aboutmobile-preference-browserUrlbarTrimHttps =
     .label = Always show website's protocol
     .description = Show https prefix in the tab url
 
+aboutmobile-preferences-browserIpProtectionEnabled =
+    .label = Show Firefox VPN
+    .description = Display Firefox VPN in the address bar
+
 # Privacy Section
 aboutmobile-section-privacy-title = Privacy
 
