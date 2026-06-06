@@ -52,9 +52,8 @@
         font-size: 9pt !important;
     }
 
-    /* urlbar: Hide translate and picture-in-picture icon */
+    /* urlbar: Hide translate and other icons */
     #urlbar #translations-button,
-    #urlbar #picture-in-picture-button,
     #urlbar #identity-box #identity-permission-box {
         display: none !important;
     }
