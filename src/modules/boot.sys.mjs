@@ -45,6 +45,7 @@ function set_default_preferences() {
     PrefManager.defaultPref('browser.ml.chat.enabled', false);
     PrefManager.defaultPref('browser.ml.chat.menu', false);
     PrefManager.defaultPref('browser.newtabpage.enabled', false);
+    PrefManager.defaultPref('browser.newtabpage.activity-stream.nova.enabled', false);
     PrefManager.defaultPref('browser.search.suggest.enabled', false);
     PrefManager.defaultPref('browser.tabs.hoverPreview.enabled', false);
     PrefManager.defaultPref('browser.tabs.inTitlebar', 1);
