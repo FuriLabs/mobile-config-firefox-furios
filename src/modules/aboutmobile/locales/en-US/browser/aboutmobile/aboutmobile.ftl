@@ -5,6 +5,7 @@
 
 aboutmobile-page-title = About Mobile
 aboutmobile-page-description = Customize your Mobile Config Firefox installation.
+aboutmobile-docs-link = Learn more about Mobile Config Firefox
 
 # General Section
 aboutmobile-section-general-title = General
