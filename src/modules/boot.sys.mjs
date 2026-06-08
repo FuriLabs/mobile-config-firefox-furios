@@ -55,6 +55,7 @@ function set_default_preferences() {
     PrefManager.defaultPref('browser.urlbar.trimHttps', true);
     PrefManager.defaultPref('dom.maxtouchpoints.testing.value', 1);
     PrefManager.defaultPref('dom.w3c_touch_events.legacy_apis.enabled', true);
+    PrefManager.defaultPref('extensions.unifiedExtensions.button.always_visible', true);
     PrefManager.defaultPref('media.videocontrols.picture-in-picture.enabled', false);
     PrefManager.defaultPref('media.webrtc.camera.allow-pipewire', true);
     PrefManager.defaultPref("screenshots.browser.component.enabled", false);
