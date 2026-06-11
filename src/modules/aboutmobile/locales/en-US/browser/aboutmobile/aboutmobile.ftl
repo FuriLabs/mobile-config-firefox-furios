@@ -34,10 +34,6 @@ aboutmobile-preference-browserUrlbarTrimHttps =
     .label = Always show website's protocol
     .description = Show https prefix in the tab url
 
-aboutmobile-preference-browserIpProtectionEnabled =
-    .label = Show Firefox VPN
-    .description = Display Firefox VPN in the address bar
-
 aboutmobile-preference-extensionsUnifiedExtensionsButtonAlwaysVisible =
     .label = Always show Unified Extension Menu
     .description = Always show the jigsaw puzzle icon to the right of the address bar or allow it to hide in App Menu
@@ -79,3 +75,7 @@ aboutmobile-preference-mediaVideocontrolsPictureInPictureEnabled =
 
 aboutmobile-preference-mcfContextmenuShowInspector =
     .label = Show Inspect in Context Menu
+
+aboutmobile-preference-browserIpProtectionEnabled =
+    .label = Enable and show Firefox VPN
+    .description = Enables and displays Firefox VPN, which requires a Mozilla account. Disabled by default as it needs a lot of space in the address bar; hiding it also disables the feature.
