@@ -61,10 +61,10 @@ aboutmobile-preference-sidebarPositionStart =
 aboutmobile-section-privacy-title = Privacy
 
 aboutmobile-preference-appShieldOptoutstudiesEnabled =
-    .label = Disable Firefox Studies
+    .label = Enable Firefox Studies
 
 aboutmobile-preference-toolkitTelemetryEnabled =
-    .label = Disable Firefox Telemetry
+    .label = Enable Firefox Telemetry
 
 # Features Section
 aboutmobile-section-features-title = Unsupported Features
