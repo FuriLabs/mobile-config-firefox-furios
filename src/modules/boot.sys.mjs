@@ -36,6 +36,7 @@ ChromeUtils.defineESModuleGetters(lazy, {
  * See docs/ for preferences description and reason we're modifying them.
  */
 function set_default_preferences() {
+    PrefManager.defaultPref('app.shield.optoutstudies.enabled', false);
     PrefManager.defaultPref('apz.allow_zooming', true);
     PrefManager.defaultPref('apz.allow_double_tap_zooming', true);
     PrefManager.defaultPref('browser.ai.control.default', 'blocked');
