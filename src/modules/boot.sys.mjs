@@ -38,31 +38,25 @@ ChromeUtils.defineESModuleGetters(lazy, {
 function set_default_preferences() {
     PrefManager.defaultPref('app.shield.optoutstudies.enabled', false);
     PrefManager.defaultPref('apz.allow_zooming', true);
-    PrefManager.defaultPref('apz.allow_double_tap_zooming', true);
+    PrefManager.defaultPref('apz.allow_double_tap_zooming', false);
     PrefManager.defaultPref('browser.ai.control.default', 'blocked');
     PrefManager.defaultPref('browser.ai.control.translations', 'available');
-    PrefManager.defaultPref('browser.download.animateNotifications', false);
     PrefManager.defaultPref('browser.ipProtection.enabled', false);
     PrefManager.defaultPref('browser.ml.chat.enabled', false);
     PrefManager.defaultPref('browser.ml.chat.menu', false);
-    PrefManager.defaultPref('browser.newtabpage.enabled', false);
     PrefManager.defaultPref('browser.newtabpage.activity-stream.nova.enabled', false);
     PrefManager.defaultPref('browser.search.suggest.enabled', false);
     PrefManager.defaultPref('browser.tabs.hoverPreview.enabled', false);
     PrefManager.defaultPref('browser.tabs.inTitlebar', 1);
     PrefManager.defaultPref('browser.urlbar.clickSelectsAll', true);
-    PrefManager.defaultPref('browser.urlbar.suggest.engines', false);
-    PrefManager.defaultPref('browser.urlbar.suggest.topsites', false);
     PrefManager.defaultPref('browser.urlbar.trimHttps', true);
     PrefManager.defaultPref('dom.maxtouchpoints.testing.value', 1);
     PrefManager.defaultPref('dom.w3c_touch_events.legacy_apis.enabled', true);
     PrefManager.defaultPref('extensions.unifiedExtensions.button.always_visible', true);
     PrefManager.defaultPref('media.videocontrols.picture-in-picture.enabled', false);
-    PrefManager.defaultPref('media.webrtc.camera.allow-pipewire', true);
     PrefManager.defaultPref("screenshots.browser.component.enabled", false);
     PrefManager.defaultPref('sidebar.main.tools', 'aichat');
     PrefManager.defaultPref('sidebar.verticalTabs.dragToPinPromo.dismissed', true);
-    PrefManager.defaultPref('toolkit.cosmeticAnimations.enabled', false);
     PrefManager.defaultPref('toolkit.legacyUserProfileCustomizations.stylesheets', true);
     PrefManager.defaultPref('widget.use-xdg-desktop-portal.file-picker', 1);
 
@@ -73,6 +67,37 @@ function set_default_preferences() {
     PrefManager.defaultPref('mcf.appmenu.showAllEntries', false);
     PrefManager.defaultPref('mcf.contextmenu.showInspector', false);
     PrefManager.defaultPref('mfc.urlbar.showTrustButton', false);
+
+    // Disable PiP controls - they don't work here and are just annoying
+    PrefManager.defaultPref('media.videocontrols.picture-in-picture.keyboard-controls.enabled', false);
+    PrefManager.defaultPref('media.videocontrols.picture-in-picture.urlbar-button.enabled', false);
+    PrefManager.defaultPref('media.videocontrols.picture-in-picture.video-toggle.enabled', false);
+    PrefManager.defaultPref('media.videocontrols.picture-in-picture.video-toggle.first-seen-secs', 1719363395);
+
+    // Restore timer precision
+    PrefManager.defaultPref('privacy.reduceTimerPrecision', false);
+    PrefManager.defaultPref('privacy.reduceTimerPrecision.unconditional', false);
+    PrefManager.defaultPref('privacy.resistFingerprinting.reduceTimerPrecision.jitter', false);
+
+    // Use new & nicer clear history dialog
+    PrefManager.defaultPref('privacy.sanitize.useOldClearHistoryDialog', false);
+
+    // Hide annoying orange thing when using WebRTC
+    PrefManager.defaultPref('privacy.webrtc.hideGlobalIndicator', true);
+
+    // Don't let websites mess with the window size
+    PrefManager.defaultPref('dom.disable_window_move_resize', true);
+
+    // Disable telemetry
+    PrefManager.defaultPref('security.app_menu.recordEventTelemetry', false);
+    PrefManager.defaultPref('toolkit.telemetry.bhrPing.enabled', false);
+    PrefManager.defaultPref('toolkit.telemetry.firstShutdownPing.enabled', false);
+    PrefManager.defaultPref('toolkit.telemetry.newProfilePing.enabled', false);
+    PrefManager.defaultPref('toolkit.telemetry.pioneer-new-studies-available', false);
+    PrefManager.defaultPref('toolkit.telemetry.reportingpolicy.firstRun', false);
+    PrefManager.defaultPref('toolkit.telemetry.shutdownPingSender.enabled', false);
+    PrefManager.defaultPref('toolkit.telemetry.unified', false);
+    PrefManager.defaultPref('toolkit.telemetry.updatePing.enabled', false);
 }
 
 /**
